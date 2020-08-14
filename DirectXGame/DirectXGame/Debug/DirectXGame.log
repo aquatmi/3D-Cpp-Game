@@ -1,0 +1,5 @@
+﻿  main.cpp
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\main.cpp(15,35): warning C4101: 'error': unreferenced local variable
+  Window.cpp
+  Generating Code...
+  DirectXGame.vcxproj -> X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\Debug\DirectXGame.exe
