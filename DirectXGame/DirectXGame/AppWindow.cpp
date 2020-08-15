@@ -3,6 +3,7 @@
 void AppWindow::OnCreate()
 {
 	Window::OnCreate();
+	GraphicsEngine::get()->init();
 }
 
 void AppWindow::OnUpdate()
@@ -13,4 +14,5 @@ void AppWindow::OnUpdate()
 void AppWindow::OnDestroy()
 {
 	Window::OnDestroy();
+	GraphicsEngine::get()->release();
 }
