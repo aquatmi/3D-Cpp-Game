@@ -12,6 +12,9 @@ public:
 	void broadcast();
 	bool isRun();
 
+	RECT getClientWindowRect();
+	void setHWND(HWND hwnd);
+
 	// EVENTS
 	virtual void OnCreate();
 	virtual void OnUpdate();

@@ -60,6 +60,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 
 		//store for later
 		SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(window));
+		window->setHWND(hwnd);
 		window->OnCreate();
 		break;
 
@@ -99,6 +100,18 @@ void Window::broadcast()
 bool Window::isRun()
 {
 	return m_is_run;
+}
+
+RECT Window::getClientWindowRect()
+{
+	RECT client_rect;
+	::GetClientRect(this->m_hwnd, &client_rect);
+	return client_rect;
+}
+
+void Window::setHWND(HWND hwnd)
+{
+	this->m_hwnd = hwnd;
 }
 
 void Window::OnCreate()

@@ -2,5 +2,7 @@
   GraphicsEngine.cpp
   main.cpp
 X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\main.cpp(16,35): warning C4101: 'error': unreferenced local variable
+  SwapChain.cpp
+  Window.cpp
   Generating Code...
   DirectXGame.vcxproj -> X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\Debug\DirectXGame.exe
