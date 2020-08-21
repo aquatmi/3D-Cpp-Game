@@ -7,7 +7,7 @@ SwapChain::SwapChain()
 
 bool SwapChain::init(HWND hwnd, UINT width, UINT height)
 {
-	IDXGIDevice* device = GraphicsEngine::get()->m_dxgi_device;
+	ID3D11Device* device = GraphicsEngine::get()->m_d3d_device;
 	
 	// Make Swap Chain Description
 	DXGI_SWAP_CHAIN_DESC desc;
@@ -27,11 +27,23 @@ bool SwapChain::init(HWND hwnd, UINT width, UINT height)
 	// Create Swap Chain
 	HRESULT result = GraphicsEngine::get()->m_dxgi_factory->CreateSwapChain(device, &desc, &m_swap_chain);
 
+	ID3D11Texture2D* buffer = NULL;
+	m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&buffer);
+
 	// Check Creation was Successful
 	if (FAILED(result)) {
 		return false;
 	}
 
+	device->CreateRenderTargetView(buffer, NULL, &m_rtv);
+	buffer->Release();
+
+	return true;
+}
+
+bool SwapChain::present(bool vsync)
+{
+	m_swap_chain->Present(vsync, NULL);
 
 	return true;
 }

@@ -27,7 +27,7 @@ bool Window::init()
 		throw std::runtime_error("Failed to Create Window Class.");
 
 	//Creating window size
-	RECT rect = { 0,0,1024,768 };
+	RECT rect = { 0,0,1280,720 };
 	AdjustWindowRectEx(&rect, WS_OVERLAPPEDWINDOW, FALSE, WS_EX_OVERLAPPEDWINDOW);
 	
 	const auto width = rect.right - rect.left;
@@ -85,13 +85,13 @@ void Window::broadcast()
 {
 	MSG msg{};
 
+	OnUpdate();
 	while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE) > 0)
 	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
 
-	OnUpdate();
 
 	Sleep(1);
 }

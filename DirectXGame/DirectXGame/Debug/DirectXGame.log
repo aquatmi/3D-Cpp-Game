@@ -1,4 +1,5 @@
 ﻿  AppWindow.cpp
+  DeviceContext.cpp
   GraphicsEngine.cpp
   main.cpp
 X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\main.cpp(16,35): warning C4101: 'error': unreferenced local variable

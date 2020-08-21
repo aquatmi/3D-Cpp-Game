@@ -1,5 +1,6 @@
 #include "GraphicsEngine.h"
 #include "SwapChain.h"
+#include "DeviceContext.h"
 
 GraphicsEngine::GraphicsEngine()
 {
@@ -25,6 +26,8 @@ bool GraphicsEngine::init() // Load DirectX Resources
 	// length of array needed for creating device
 	UINT num_feature_levels = ARRAYSIZE(feature_levels);
 
+	ID3D11DeviceContext* m_imm_context;
+
 	HRESULT result = 0;	// checker to see if driver loaded correctly
 	for (UINT driver_type_index = 0; driver_type_index < num_driver_types; driver_type_index++) {
 		// for each driver type, attempt to create a device
@@ -41,6 +44,9 @@ bool GraphicsEngine::init() // Load DirectX Resources
 		return false;
 	}
 
+	m_imm_device_context = new DeviceContext(m_imm_context);
+
+
 	m_d3d_device->QueryInterface(__uuidof(IDXGIDevice), (void**)&m_dxgi_device);
 	m_dxgi_device->GetParent(__uuidof(IDXGIAdapter), (void**)&m_dxgi_adapter);
 	m_dxgi_adapter->GetParent(__uuidof(IDXGIFactory), (void**)&m_dxgi_factory);
@@ -54,7 +60,7 @@ bool GraphicsEngine::release()
 	m_dxgi_factory->Release();
 
 	// Release DirectX Resources
-	m_imm_context->Release();
+	m_imm_device_context->Release();
 	m_d3d_device->Release();
 	return true;
 }
@@ -72,4 +78,9 @@ GraphicsEngine* GraphicsEngine::get()
 SwapChain* GraphicsEngine::createSwapChain()
 {
 	return new SwapChain();
+}
+
+DeviceContext* GraphicsEngine::getImmidiateDeviceContext()
+{
+	return this->m_imm_device_context;
 }
