@@ -1,9 +1,10 @@
 ﻿  AppWindow.cpp
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\AppWindow.cpp(36,25): error C2039: 'createShader': is not a member of 'GraphicsEngine'
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\GraphicsEngine.h(8): message : see declaration of 'GraphicsEngine'
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\AppWindow.cpp(39,25): error C2039: 'getShaderBufferAndSize': is not a member of 'GraphicsEngine'
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\GraphicsEngine.h(8): message : see declaration of 'GraphicsEngine'
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\AppWindow.cpp(54,25): error C2039: 'setShaders': is not a member of 'GraphicsEngine'
+X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\GraphicsEngine.h(8): message : see declaration of 'GraphicsEngine'
   DeviceContext.cpp
-  GraphicsEngine.cpp
-  main.cpp
-X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\DirectXGame\main.cpp(16,35): warning C4101: 'error': unreferenced local variable
-  SwapChain.cpp
-  Window.cpp
+  VertexBuffer.cpp
   Generating Code...
-  DirectXGame.vcxproj -> X:\Dominics Stuff\My Documents\GitHub\3D-Cpp-Game\DirectXGame\Debug\DirectXGame.exe
